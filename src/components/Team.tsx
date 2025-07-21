@@ -9,7 +9,7 @@ const Team = () => {
       role: "Hardware Designer",
       image: "/ayyapadas.webp",
       icon: <Code size={24} />,
-      skills: ["Robo Making", "Tailwind CSS", "Next.js"],
+      skills: ["Robo Making"],
       bio: "Passionate hardware designer creating beautiful projects .",
       social: {
         github: "#",
