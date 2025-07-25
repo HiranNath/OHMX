@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
@@ -7,11 +8,17 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (sectionId: string) => {
     setIsMenuOpen(false);
+    if (isHomePage) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollToSection: sectionId } });
+    }
   };
 
   return (
@@ -20,48 +27,24 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
     }`}>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 py-1 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex items-center justify-center w-[120px] ">
-               <img src="/logo.png" alt="Logo"/>
+          <Link to="/" className="flex items-center">
+            <div className="flex items-center justify-center w-[120px]">
+                <img src="/logo.png" alt="Logo"/>
             </div>
-           
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden space-x-8 md:flex">
-            <button 
-              onClick={() => scrollToSection('hero')}
-              className="text-white transition-colors duration-200 hover:text-orange-500"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection('team')}
-              className="text-white transition-colors duration-200 hover:text-orange-500"
-            >
-              Team
-            </button>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="text-white transition-colors duration-200 hover:text-orange-500"
-            >
-              Projects
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-white transition-colors duration-200 hover:text-orange-500"
-            >
-              Contact
-            </button>
+            <button onClick={() => handleNavClick('hero')} className="text-white transition-colors duration-200 hover:text-orange-500">Home</button>
+            <button onClick={() => handleNavClick('team')} className="text-white transition-colors duration-200 hover:text-orange-500">Team</button>
+            {/* CHANGED: This is now a button that scrolls */}
+            <button onClick={() => handleNavClick('projects')} className="text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
+            <button onClick={() => handleNavClick('contact')} className="text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
           </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white transition-colors duration-200 hover:text-orange-500"
-            >
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white transition-colors duration-200 hover:text-orange-500">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -71,30 +54,11 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
         {isMenuOpen && (
           <div className="p-4 mt-2 rounded-lg md:hidden bg-black/95 backdrop-blur-md">
             <nav className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('hero')}
-                className="text-left text-white transition-colors duration-200 hover:text-orange-500"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('team')}
-                className="text-left text-white transition-colors duration-200 hover:text-orange-500"
-              >
-                Team
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-left text-white transition-colors duration-200 hover:text-orange-500"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-white transition-colors duration-200 hover:text-orange-500"
-              >
-                Contact
-              </button>
+              <button onClick={() => handleNavClick('hero')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Home</button>
+              <button onClick={() => handleNavClick('team')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Team</button>
+              {/* CHANGED: This is now a button that scrolls */}
+              <button onClick={() => handleNavClick('projects')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
+              <button onClick={() => handleNavClick('contact')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
             </nav>
           </div>
         )}

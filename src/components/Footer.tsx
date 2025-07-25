@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
-                <span className="text-xl font-bold text-black">GP</span>
+              <div >
+                <img src="/favicon.png" alt="Logo" className="w-10 h-10" />
               </div>
               <span className="ml-3 text-2xl font-bold">GroupPortfolio</span>
             </div>
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} GroupPortfolio. All rights reserved.
+            © {new Date().getFullYear()} OhmX. All rights reserved.
           </p>
         </div>
       </div>
