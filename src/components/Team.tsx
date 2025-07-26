@@ -5,58 +5,115 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Ayyappads",
+      name: "Ayyappa Das",
       role: "Hardware Designer",
-      image: "/ayyapadas.webp",
+      image: "/team/ayyapadas.webp",
       icon: <Code size={24} />,
-      skills: ["Robo Making"],
-      bio: "Passionate hardware designer creating beautiful projects .",
+      skills: ["PCB Designing", "Circuit Designing", "3D Modelling"],
+      bio: "Passionate hardware designer creating beautiful projects.",
       social: {
         github: "#",
-        linkedin: "#",
+        linkedin: "https://linkedin.com/in/ayyappadasvasudevan",
         email: "alex@groupportfolio.com"
       }
     },
     {
       id: 2,
       name: "Adhil Jahan",
-      role: "UI/UX Designer",
-      image: "/Adhil.webp",
+      role: "Coder",
+      image: "/team/adhil.webp",
       icon: <Palette size={24} />,
-      skills: ["Figma", "Adobe XD", "User Research", "Prototyping"],
-      bio: "Creative designer focused on user-centered design principles to enhance user experience.",
+      skills: ["Figma", "Arduino IDE", "C", "Prototyping", "Full Stack"],
+      bio: "Passionate coder crafting flawless line‑following algorithms.",
       social: {
-        github: "http://github.com/SiMoNRiLeY-141/",
-        linkedin: "http://linkedin.com/in/adhiljahan",
+        github: "https://github.com/SiMoNRiLeY-141/",
+        linkedin: "https://linkedin.com/in/adhiljahan",
         email: "adhiljahan2@gmail.com"
       }
     },
     {
       id: 3,
-      name: "Marcus Rodriguez",
-      role: "Backend Developer",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=1",
+      name: "Namiya Abdul Assiz",
+      role: "Tester",
+      image: "/team/namiya.webp",
       icon: <Database size={24} />,
-      skills: ["Node.js", "Python", "PostgreSQL", "AWS"],
-      bio: "Backend specialist with expertise in scalable architecture and database design.",
+      skills: ["Troubleshooting", "Arduino IDE"],
+      bio: "Hunting down glitches until every track is conquered.",
       social: {
         github: "#",
-        linkedin: "#",
-        email: "marcus@groupportfolio.com"
+        linkedin: "https://www.linkedin.com/in/namiya-abdul-assiz-46a57525a",
+        email: "namiyaabdulassiz@gmail.com"
       }
     },
     {
       id: 4,
-      name: "Emily Watson",
-      role: "Mobile Developer",
-      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=1",
+      name: "Kesav",
+      role: "Graphic Designer",
+      image: "/team/kesav.webp",
       icon: <Smartphone size={24} />,
-      skills: ["React Native", "Flutter", "iOS", "Android"],
-      bio: "Mobile development expert crafting seamless cross-platform applications.",
+      skills: ["Photoshop", "FIgma", "Illustrator"],
+      bio: "Whipping up visuals that make your project pop.",
       social: {
         github: "#",
         linkedin: "#",
-        email: "emily@groupportfolio.com"
+        email: "kesavskp2005@gmail.com"
+      }
+    },
+    {
+      id: 5,
+      name: "Roshith",
+      role: "Content Creator",
+      image: "/team/roshith.webp",
+      icon: <Smartphone size={24} />,
+      skills: ["Videography", "Video Editing", "Audio Mixing"],
+      bio: "Crafting engaging videos that bring ideas to life on screen.",
+      social: {
+        github: "#",
+        linkedin: "#",
+        email: "roshi60t@gmail.com"
+      }
+    }
+    ,
+    {
+      id: 6,
+      name: "Amalkrishnan",
+      role: "Social Media Manager",
+      image: "/team/amal.webp",
+      icon: <Smartphone size={24} />,
+      skills: ["Media Management", "Video/Photo Editing", "Communiuty Management"],
+      bio: "Showcasing builds that stop thumbs mid‑scroll.",
+      social: {
+        github: "#",
+        linkedin: "https://www.linkedin.com/in/amalkrishnan-k-0a9639352",
+        email: "amalkrishnank91@gmail.com"
+      }
+    },
+    {
+      id: 7,
+      name: "Adeline Anto",
+      role: "Logistics",
+      image: "/team/adeline.webp",
+      icon: <Smartphone size={24} />,
+      skills: ["Inventory Tracking", "Budget Compliance", "Outreach"],
+      bio: "Mobile development expert crafting seamless cross-platform applications.",
+      social: {
+        github: "#",
+        linkedin: "https://www.linkedin.com/in/adeline-anto-38a6652a1/",
+        email: "adelineanto1@gmail.com"
+      }
+    },
+    {
+      id: 8,
+      name: "Najiya",
+      role: "Competition Scout",
+      image: "/team/najiya.webp",
+      icon: <Smartphone size={24} />,
+      skills: ["Research & calendar‑tracking", "Deadline Management", "Risk Evaluation"],
+      bio: "Spotting the next contest where we can shine.",
+      social: {
+        github: "#",
+        linkedin: "#",
+        email: "najiyaka2004@gmail.com"
       }
     }
   ];
@@ -76,12 +133,12 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+        <div className="flex flex-wrap justify-center gap-8">
           {teamMembers.map((member) => (
             // Card Container
             <div
               key={member.id}
-              className="relative group h-96 w-full rounded-2xl overflow-hidden shadow-xl"
+                className="relative group h-96 w-full sm:w-[45%] lg:w-[25%] rounded-2xl overflow-hidden shadow-xl"            
             >
               {/* Background Image - Always Visible */}
               <img
