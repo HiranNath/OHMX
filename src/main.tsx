@@ -1,13 +1,21 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+// src/main.tsx
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop.tsx';
+import { CartProvider } from './context/CartContext'; // ADD THIS IMPORT
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
     <BrowserRouter>
-      <App />
+      {/* ADD THE CART PROVIDER HERE */}
+      <CartProvider>
+        <ScrollToTop />
+        <App />
+      </CartProvider>
     </BrowserRouter>
-  </StrictMode>
+  </React.StrictMode>,
 );

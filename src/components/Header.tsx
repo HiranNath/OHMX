@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -11,6 +12,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const { cartItems } = useCart();
 
   const handleNavClick = (sectionId: string) => {
     setIsMenuOpen(false);
@@ -27,6 +29,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
     }`}>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 py-1 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          
+          {/* Logo Section */}
           <Link to="/" className="flex items-center">
             <div className="flex items-center justify-center w-[120px]">
                 <img src="/logo.png" alt="Logo"/>
@@ -34,12 +38,22 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden space-x-8 md:flex">
+          <nav className="hidden items-center space-x-8 md:flex">
             <button onClick={() => handleNavClick('hero')} className="text-white transition-colors duration-200 hover:text-orange-500">Home</button>
             <button onClick={() => handleNavClick('team')} className="text-white transition-colors duration-200 hover:text-orange-500">Team</button>
-            {/* CHANGED: This is now a button that scrolls */}
             <button onClick={() => handleNavClick('projects')} className="text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
+            <Link to="/store" className="text-white transition-colors duration-200 hover:text-orange-500">Store</Link>
             <button onClick={() => handleNavClick('contact')} className="text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
+            
+            {/* Cart Icon Link */}
+            <Link to="/store" className="relative text-white transition-colors duration-200 hover:text-orange-500">
+              <ShoppingCart size={24} />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 text-xs font-bold text-black bg-orange-500 rounded-full">
+                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                </span>
+              )}
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -56,8 +70,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             <nav className="flex flex-col space-y-4">
               <button onClick={() => handleNavClick('hero')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Home</button>
               <button onClick={() => handleNavClick('team')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Team</button>
-              {/* CHANGED: This is now a button that scrolls */}
               <button onClick={() => handleNavClick('projects')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
+              <Link to="/store" onClick={() => setIsMenuOpen(false)} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Store</Link>
               <button onClick={() => handleNavClick('contact')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
             </nav>
           </div>
