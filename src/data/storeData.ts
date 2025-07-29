@@ -4,7 +4,7 @@ export interface Product {
   description: string;
   image: string;
   price: string;
-  buyNowLink: string;
+  buyNowLink?: string;
 }
 
 const createWhatsAppLink = (productName: string): string => {
