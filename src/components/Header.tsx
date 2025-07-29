@@ -30,7 +30,6 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 py-1 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Logo Section */}
           <Link to="/" className="flex items-center">
             <div className="flex items-center justify-center w-[120px]">
                 <img src="/logo.png" alt="Logo"/>
@@ -42,10 +41,10 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             <button onClick={() => handleNavClick('hero')} className="text-white transition-colors duration-200 hover:text-orange-500">Home</button>
             <button onClick={() => handleNavClick('team')} className="text-white transition-colors duration-200 hover:text-orange-500">Team</button>
             <button onClick={() => handleNavClick('projects')} className="text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
-            <Link to="/store" className="text-white transition-colors duration-200 hover:text-orange-500">Store</Link>
+            {/* REMOVED the separate "Store" link */}
             <button onClick={() => handleNavClick('contact')} className="text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
             
-            {/* Cart Icon Link */}
+            {/* Cart Icon now serves as the link to the store */}
             <Link to="/store" className="relative text-white transition-colors duration-200 hover:text-orange-500">
               <ShoppingCart size={24} />
               {cartItems.length > 0 && (
@@ -71,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               <button onClick={() => handleNavClick('hero')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Home</button>
               <button onClick={() => handleNavClick('team')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Team</button>
               <button onClick={() => handleNavClick('projects')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
-              <Link to="/store" onClick={() => setIsMenuOpen(false)} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Store</Link>
+              {/* REMOVED the separate "Store" link, users will click the cart icon in the header */}
               <button onClick={() => handleNavClick('contact')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
             </nav>
           </div>
