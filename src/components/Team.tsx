@@ -11,17 +11,63 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
   const navigate = useNavigate();
 
   const teamMembers = [
-    { id: 1, name: "Ayyappa Das", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 2, name: "Adhil Jahan", role: "Coder", image: "/team/adhil.webp", bio: "Passionate coder crafting flawless algorithms.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 3, name: "Namiya Abdul Assiz", role: "Tester", image: "/team/namiya.webp", bio: "Hunting down glitches until every track is conquered.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 4, name: "Kesav", role: "Graphic Designer", image: "/team/kesav.webp", bio: "Whipping up visuals that make your project pop.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 5, name: "Roshith", role: "Content Creator", image: "/team/roshith.webp", bio: "Crafting engaging videos that bring ideas to life.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 6, name: "Amalkrishnan", role: "Social Media Manager", image: "/team/amal.webp", bio: "Showcasing builds that stop thumbs mid‑scroll.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 7, name: "Adeline Anto", role: "Logistics", image: "/team/adeline.webp", bio: "Ensuring the project stays on track and on budget.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 8, name: "Najiya", role: "Competition Scout", image: "/team/najiya.webp", bio: "Spotting the next contest where we can shine.", social: { github: "#", linkedin: "#", email: "#" } }
+    {
+      id: 1,
+      name: "Ayyappads",
+      role: "Hardware Designer",
+      image: "/ayyapadas.webp",
+      icon: <Code size={24} />,
+      skills: ["Robo Making"],
+      bio: "Passionate hardware designer creating beautiful projects .",
+      social: {
+        github: "#",
+        linkedin: "#",
+        email: "alex@groupportfolio.com"
+      }
+    },
+    {
+      id: 2,
+      name: "Adhil Jahan",
+      role: "UI/UX Designer",
+      image: "/Adhil.webp",
+      icon: <Palette size={24} />,
+      skills: ["Figma", "Adobe XD", "User Research", "Prototyping"],
+      bio: "Creative designer focused on user-centered design principles to enhance user experience.",
+      social: {
+        github: "http://github.com/SiMoNRiLeY-141/",
+        linkedin: "http://linkedin.com/in/adhiljahan",
+        email: "adhiljahan2@gmail.com"
+      }
+    },
+    {
+      id: 3,
+      name: "Marcus Rodriguez",
+      role: "Backend Developer",
+      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=1",
+      icon: <Database size={24} />,
+      skills: ["Node.js", "Python", "PostgreSQL", "AWS"],
+      bio: "Backend specialist with expertise in scalable architecture and database design.",
+      social: {
+        github: "#",
+        linkedin: "#",
+        email: "marcus@groupportfolio.com"
+      }
+    },
+    {
+      id: 4,
+      name: "Emily Watson",
+      role: "Mobile Developer",
+      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=1",
+      icon: <Smartphone size={24} />,
+      skills: ["React Native", "Flutter", "iOS", "Android"],
+      bio: "Mobile development expert crafting seamless cross-platform applications.",
+      social: {
+        github: "#",
+        linkedin: "#",
+        email: "emily@groupportfolio.com"
+      }
+    }
   ];
-
-  const membersToShow = showAll ? teamMembers : teamMembers.slice(0, 4);
 
   return (
     <section id="team" className={showAll ? "pt-16 pb-20 bg-gray-900" : "py-20 bg-gray-900"}>
@@ -38,12 +84,11 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
           </p>
         </div>
 
-        {/* --- THIS IS THE CORRECTED PART --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {membersToShow.map((member) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+          {teamMembers.map((member) => (
+            // Card Container
             <div
               key={member.id}
-              // The responsive width classes are no longer needed here
               className="relative group h-96 w-full rounded-2xl overflow-hidden shadow-xl"
             >
               <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
