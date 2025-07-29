@@ -7,32 +7,24 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
 import AllProjectsPage from './components/AllProjectsPage';
+import AllTeamPage from './components/AllTeamPage'; // ADD THIS IMPORT
 import { Loader2 } from 'lucide-react';
 
 function App() {
   const [showLogo, setShowLogo] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation(); // ADDED: to read navigation state
+  const location = useLocation();
 
-  // This useEffect handles the logo popup and header scroll state
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLogo(false);
-    }, 2000);
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const timer = setTimeout(() => { setShowLogo(false); }, 2000);
+    const handleScroll = () => { setIsScrolled(window.scrollY > 50); };
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
-  // ADDED: This useEffect handles scrolling to a section from another page
   useEffect(() => {
     if (location.state?.scrollToSection) {
       const element = document.getElementById(location.state.scrollToSection);
@@ -44,7 +36,6 @@ function App() {
 
   return (
     <div className="relative min-h-screen text-white bg-black">
-      {/* Logo Popup */}
       <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-all duration-1000 ${
         showLogo ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
       }`}>
@@ -56,7 +47,6 @@ function App() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className={`transition-all duration-1000 ${showLogo ? 'blur-sm' : 'blur-none'}`}>
         <Header isScrolled={isScrolled} />
         
@@ -73,6 +63,13 @@ function App() {
           <Route path="/projects" element={
             <>
               <AllProjectsPage />
+              <Footer />
+            </>
+          } />
+          {/* ADDED: This new route shows the full list of team members */}
+          <Route path="/team" element={
+            <>
+              <AllTeamPage />
               <Footer />
             </>
           } />
