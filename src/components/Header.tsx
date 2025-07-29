@@ -41,10 +41,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             <button onClick={() => handleNavClick('hero')} className="text-white transition-colors duration-200 hover:text-orange-500">Home</button>
             <button onClick={() => handleNavClick('team')} className="text-white transition-colors duration-200 hover:text-orange-500">Team</button>
             <button onClick={() => handleNavClick('projects')} className="text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
-            {/* REMOVED the separate "Store" link */}
             <button onClick={() => handleNavClick('contact')} className="text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
             
-            {/* Cart Icon now serves as the link to the store */}
             <Link to="/store" className="relative text-white transition-colors duration-200 hover:text-orange-500">
               <ShoppingCart size={24} />
               {cartItems.length > 0 && (
@@ -70,8 +68,24 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               <button onClick={() => handleNavClick('hero')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Home</button>
               <button onClick={() => handleNavClick('team')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Team</button>
               <button onClick={() => handleNavClick('projects')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Projects</button>
-              {/* REMOVED the separate "Store" link, users will click the cart icon in the header */}
               <button onClick={() => handleNavClick('contact')} className="text-left text-white transition-colors duration-200 hover:text-orange-500">Contact</button>
+              
+              {/* --- ADDED THIS PART --- */}
+              <hr className="border-gray-700"/>
+              <Link 
+                to="/store" 
+                onClick={() => setIsMenuOpen(false)} 
+                className="flex items-center text-left text-white transition-colors duration-200 hover:text-orange-500"
+              >
+                <ShoppingCart size={20} className="mr-3"/>
+                Cart
+                {cartItems.length > 0 && (
+                    <span className="ml-auto flex items-center justify-center w-6 h-6 text-xs font-bold text-black bg-orange-500 rounded-full">
+                        {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                    </span>
+                )}
+              </Link>
+              {/* ----------------------- */}
             </nav>
           </div>
         )}
