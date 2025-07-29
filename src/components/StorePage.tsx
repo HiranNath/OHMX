@@ -106,7 +106,7 @@ const StorePage: React.FC = () => {
         )}
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
             <div key={product.id} className="bg-gray-900 rounded-2xl overflow-hidden shadow-lg flex flex-col">
               <img src={product.image} alt={product.name} className="w-full h-56 object-cover" />
