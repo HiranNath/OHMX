@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
           {/* UPDATED: Added an intermediate font size for tablets */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold">
             We Create
-            <span className="block bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent leading-[1.2] pb-1.5">
               Amazing Things
             </span>
           </h1>
