@@ -34,7 +34,7 @@ export const storeData: Product[] = [
     id: 3,
     name: "L298N Motor Driver",
     description: "A dual H-bridge module that allows for precise speed and direction control of two DC motors.",
-    image: "https://i.imgur.com/Xm1z9yW.jpeg",
+    image: "store/L298N.jpg",
     price: "₹250",
     buyNowLink: createWhatsAppLink("L298N Motor Driver")
   },
@@ -42,24 +42,74 @@ export const storeData: Product[] = [
     id: 4,
     name: "ESP32 Dev Kit",
     description: "A microcontroller with built-in Wi-Fi and Bluetooth, perfect for IoT and smart device projects.",
-    image: "https://images.pexels.com/photos/14838638/pexels-photo-14838638.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "store/esp.jpg",
     price: "₹750",
     buyNowLink: createWhatsAppLink("ESP32 Dev Kit")
   },
   {
     id: 5,
-    name: "IR Sensor Array",
+    name: "Arduino nano",
     description: "An array of infrared sensors used to detect contrast, ideal for line-following robots.",
-    image: "https://i.imgur.com/D4sSg1b.jpeg",
+    image: "store/nano.png",
     price: "₹350",
     buyNowLink: createWhatsAppLink("IR Sensor Array")
   },
   {
     id: 6,
-    name: "MAX30102 Heart Rate & SpO2 Sensor",
+    name: "atmega 328p",
     description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
-    image: "https://i.imgur.com/gD6j3x9.jpeg",
+    image: "store/328.jpg",
     price: "₹650",
     buyNowLink: createWhatsAppLink("MAX30102 Sensor")
   },
+
+{
+    id: 7,
+    name: "Arduino mega",
+    description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
+    image: "store/mega.png",
+    price: "₹650",
+    buyNowLink: createWhatsAppLink("MAX30102 Sensor")
+  },
+
+{
+    id: 8,
+    name: "Tlp 250",
+    description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
+    image: "store/tlp250.webp",
+    price: "₹650",
+    buyNowLink: createWhatsAppLink("MAX30102 Sensor")
+  },
+
+{
+    id: 9,
+    name: "capacitor 16v/100uf",
+    description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
+    image: "store/cap16-100.jpg",
+    price: "₹8",
+    buyNowLink: createWhatsAppLink("MAX30102 Sensor")
+  },
+
+{
+    id: 10,
+    name: "irfp240",
+    description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
+    image: "store/irfp240.jpg",
+    price: "₹8",
+    buyNowLink: createWhatsAppLink("MAX30102 Sensor")
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
