@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               <div className="flex items-start justify-center md:justify-start">
                 <Mail className="text-orange-500 mt-1 mr-3 flex-shrink-0" size={20} />
                 <div>
-                  <p className="text-gray-300">adhiljahan2@gmail.com</p>
+                  <p className="text-gray-300">ayyappadasvasudev@gmail.com</p>
                   <p className="text-gray-400 text-sm">We'd love to hear from you</p>
                 </div>
               </div>

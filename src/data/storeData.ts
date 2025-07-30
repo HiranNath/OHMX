@@ -18,7 +18,7 @@ export const storeData: Product[] = [
     id: 1,
     name: "Arduino Uno R3",
     description: "The classic microcontroller for all electronics projects, perfect for beginners and experts alike.",
-    image: "https://i.imgur.com/Y8a2nZl.jpeg",
+    image: "/store/uno.jpg",
     price: "₹650",
     buyNowLink: createWhatsAppLink("Arduino Uno R3")
   },
@@ -26,7 +26,7 @@ export const storeData: Product[] = [
     id: 2,
     name: "Raspberry Pi 4 (4GB)",
     description: "A powerful single-board computer for complex projects, from home media centers to smart POS systems.",
-    image: "https://images.pexels.com/photos/13194600/pexels-photo-13194600.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/store/raspberry-pi-4.jpg",
     price: "₹6,500",
     buyNowLink: createWhatsAppLink("Raspberry Pi 4 (4GB)")
   },
