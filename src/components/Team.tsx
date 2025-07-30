@@ -11,7 +11,7 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
   const navigate = useNavigate();
 
   const teamMembers = [
-    { id: 1, name: "Ayyappa ", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "#", email: "#" } },
+    { id: 1, name: "Ayyappa Das", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "#", email: "#" } },
     { id: 2, name: "Adhil Jahan", role: "Coder", image: "/team/adhil.webp", bio: "Passionate coder crafting flawless algorithms.", social: { github: "#", linkedin: "#", email: "#" } },
     { id: 3, name: "Namiya Abdul Assiz", role: "Tester", image: "/team/namiya.webp", bio: "Hunting down glitches until every track is conquered.", social: { github: "#", linkedin: "#", email: "#" } },
     { id: 4, name: "Kesav", role: "Graphic Designer", image: "/team/kesav.webp", bio: "Whipping up visuals that make your project pop.", social: { github: "#", linkedin: "#", email: "#" } },
