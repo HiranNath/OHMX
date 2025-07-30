@@ -26,7 +26,7 @@ export const storeData: Product[] = [
     id: 2,
     name: "Raspberry Pi 4 (4GB)",
     description: "A powerful single-board computer for complex projects, from home media centers to smart POS systems.",
-    image: "https://images.pexels.com/photos/13194600/pexels-photo-13194600.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/store/raspberry-pi-4.jpg",
     price: "₹6,500",
     buyNowLink: createWhatsAppLink("Raspberry Pi 4 (4GB)")
   },
