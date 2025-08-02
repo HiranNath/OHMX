@@ -14,16 +14,16 @@ const Hero: React.FC = () => {
           
           {/* UPDATED: Added an intermediate font size for tablets */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold">
-            We Create
+            Ohmx Brings
             <span className="block bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent leading-[1.2] pb-1.5">
-              Amazing Things
+              Ideas To life
             </span>
           </h1>
 
           {/* UPDATED: Adjusted font sizes for better scaling */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A collective of passionate creators, innovators, and problem solvers 
-            dedicated to bringing extraordinary ideas to life through cutting-edge technology and design.
+           OHMX is a BTech student-led startup helping polytechnic and engineering students with project support, guidance, and innovation.
+           We turn ideas into impactful academic projects.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

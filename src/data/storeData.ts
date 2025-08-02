@@ -43,7 +43,7 @@ export const storeData: Product[] = [
     name: "ESP32 Dev Kit",
     description: "A microcontroller with built-in Wi-Fi and Bluetooth, perfect for IoT and smart device projects.",
     image: "store/esp.jpg",
-    price: "₹750",
+    price: "₹350",
     buyNowLink: createWhatsAppLink("ESP32 Dev Kit")
   },
   {
@@ -59,7 +59,7 @@ export const storeData: Product[] = [
     name: "atmega 328p",
     description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
     image: "store/328.jpg",
-    price: "₹650",
+    price: "₹300",
     buyNowLink: createWhatsAppLink("MAX30102 Sensor")
   },
 
@@ -77,7 +77,7 @@ export const storeData: Product[] = [
     name: "Tlp 250",
     description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
     image: "store/tlp250.webp",
-    price: "₹650",
+    price: "₹250",
     buyNowLink: createWhatsAppLink("MAX30102 Sensor")
   },
 
@@ -95,7 +95,7 @@ export const storeData: Product[] = [
     name: "irfp240",
     description: "A high-sensitivity pulse oximeter and heart-rate sensor for accurate biometric data.",
     image: "store/irfp240.jpg",
-    price: "₹8",
+    price: "₹80",
     buyNowLink: createWhatsAppLink("MAX30102 Sensor")
   },
 
