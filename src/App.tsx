@@ -3,10 +3,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
-import AllProjectsPage from './components/AllProjectsPage';
-import AllTeamPage from './components/AllTeamPage';
-import StorePage from './components/StorePage';
-import HomePage from './components/HomePage';
+import AllProjectsPage from './components/AllProjectsPage'; // Corrected path
+import StorePage from './components/StorePage'; // Corrected path
+import HomePage from './components/HomePage'; // Corrected path
 import { Loader2 } from 'lucide-react';
 
 function App() {
@@ -53,7 +52,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/project/:id" element={<ProjectDetails />} />
             <Route path="/projects" element={<><AllProjectsPage /><Footer /></>} />
-            <Route path="/team" element={<><AllTeamPage /><Footer /></>} />
+            {/* REMOVED: The /team route is no longer needed */}
             <Route path="/store" element={<><StorePage /><Footer /></>} />
           </Routes>
         </main>

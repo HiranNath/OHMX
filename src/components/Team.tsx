@@ -1,15 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-// This prop tells the component whether to show all members or just a few
-interface TeamProps {
-  showAll?: boolean;
-}
-
-const Team: React.FC<TeamProps> = ({ showAll = false }) => {
-  const navigate = useNavigate();
-
+const Team: React.FC = () => {
   const teamMembers = [
     { id: 1, name: "Ayyappa Das", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "#", email: "#" } },
     { id: 2, name: "Adhil Jahan", role: "Coder", image: "/team/adhil.webp", bio: "Passionate coder crafting flawless algorithms.", social: { github: "#", linkedin: "#", email: "#" } },
@@ -21,10 +13,8 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
     { id: 8, name: "Najiya", role: "Competition Scout", image: "/team/najiya.webp", bio: "Spotting the next contest where we can shine.", social: { github: "#", linkedin: "#", email: "#" } }
   ];
 
-  const membersToShow = showAll ? teamMembers : teamMembers.slice(0, 4);
-
   return (
-    <section id="team" className={showAll ? "pt-16 pb-20 bg-gray-900" : "py-20 bg-gray-900"}>
+    <section id="team" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -38,12 +28,10 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
           </p>
         </div>
 
-        {/* --- THIS IS THE CORRECTED PART --- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {membersToShow.map((member) => (
+          {teamMembers.map((member) => (
             <div
               key={member.id}
-              // The responsive width classes are no longer needed here
               className="relative group h-96 w-full rounded-2xl overflow-hidden shadow-xl"
             >
               <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" />
@@ -66,17 +54,6 @@ const Team: React.FC<TeamProps> = ({ showAll = false }) => {
             </div>
           ))}
         </div>
-
-        {!showAll && (
-          <div className="text-center mt-16">
-            <button
-              onClick={() => navigate('/team')}
-              className="px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-black font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
-            >
-              View All Members
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );
