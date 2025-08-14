@@ -3,14 +3,14 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Team: React.FC = () => {
   const teamMembers = [
-    { id: 1, name: "Ayyappa Das", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 2, name: "Adhil Jahan", role: "Coder", image: "/team/adhil.webp", bio: "Passionate coder crafting flawless algorithms.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 3, name: "Namiya Abdul Assiz", role: "Tester", image: "/team/namiya.webp", bio: "Hunting down glitches until every track is conquered.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 4, name: "Kesav", role: "Graphic Designer", image: "/team/kesav.webp", bio: "Whipping up visuals that make your project pop.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 5, name: "Roshith", role: "Content Creator", image: "/team/roshith.webp", bio: "Crafting engaging videos that bring ideas to life.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 6, name: "Amalkrishnan", role: "Social Media Manager", image: "/team/amal.webp", bio: "Showcasing builds that stop thumbs mid‑scroll.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 7, name: "Adeline Anto", role: "Logistics", image: "/team/adeline.webp", bio: "Ensuring the project stays on track and on budget.", social: { github: "#", linkedin: "#", email: "#" } },
-    { id: 8, name: "Najiya", role: "Competition Scout", image: "/team/najiya.webp", bio: "Spotting the next contest where we can shine.", social: { github: "#", linkedin: "#", email: "#" } }
+    { id: 1, name: "Ayyappa Das", role: "Hardware Designer", image: "/team/ayyapadas.webp", bio: "Passionate hardware designer.", social: { github: "#", linkedin: "https://linkedin.com/in/ayyappadasvasudevan", email: "ayyappadasvasudev@gmail.com" } },
+    { id: 2, name: "Adhil Jahan", role: "Coder", image: "/team/adhil.webp", bio: "Passionate coder crafting flawless algorithms.", social: { github: "https://github.com/SiMoNRiLeY-141", linkedin: "https://linkedin.com/in/adhiljahan", email: "adhiljahan2@gmail.com" } },
+    { id: 3, name: "Namiya Abdul Assiz", role: "Tester", image: "/team/namiya.webp", bio: "Hunting down glitches until every track is conquered.", social: { github: "#", linkedin: "https://www.linkedin.com/in/namiya-abdul-assiz-46a57525a", email: "namiyaabdulassiz@gmail.com" } },
+    { id: 4, name: "Kesav", role: "Graphic Designer", image: "/team/kesav.webp", bio: "Whipping up visuals that make your project pop.", social: { github: "#", linkedin: "#", email: "kesavskp2005@gmail.com" } },
+    { id: 5, name: "Roshith", role: "Content Creator", image: "/team/roshith.webp", bio: "Crafting engaging videos that bring ideas to life.", social: { github: "#", linkedin: "#", email: "roshi60t@gmail.com" } },
+    { id: 6, name: "Amalkrishnan", role: "Social Media Manager", image: "/team/amal.webp", bio: "Showcasing builds that stop thumbs mid‑scroll.", social: { github: "#", linkedin: "https://www.linkedin.com/in/amalkrishnan-k-0a9639352", email: "amalkrishnank91@gmail.com" } },
+    { id: 7, name: "Adeline Anto", role: "Logistics", image: "/team/adeline.webp", bio: "Ensuring the project stays on track and on budget.", social: { github: "#", linkedin: "https://www.linkedin.com/in/adeline-anto-38a6652a1", email: "adelineanto1@gmail.com" } },
+    { id: 8, name: "Najiya", role: "Competition Scout", image: "/team/najiya.webp", bio: "Spotting the next contest where we can shine.", social: { github: "#", linkedin: "#", email: "#najiyaka2004@gmail.com" } }
   ];
 
   return (
